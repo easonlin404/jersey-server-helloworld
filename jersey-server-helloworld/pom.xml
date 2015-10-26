@@ -4,6 +4,7 @@
 	<groupId>easonlin</groupId>
 	<artifactId>jersey-server-helloworld</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jersey.version>2.22.1</jersey.version>
@@ -42,6 +43,22 @@
 						<contextPath>/jersey-server-helloworld</contextPath>
 						<descriptor>src/main/webapp/WEB-INF/jetty-env-web.xml</descriptor>
 					</webApp>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<warName>APMO</warName>
+					<packagingExcludes>WEB-INF/jetty-env-web.xml</packagingExcludes>
+					<webXml>src/main/webapp/WEB-INF/jetty-env-web.xml</webXml>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp/META-INF</directory>
+							<filtering>true</filtering>
+							<targetPath>META-INF</targetPath>
+						</resource>
+					</webResources>
 				</configuration>
 			</plugin>
 		</plugins>
