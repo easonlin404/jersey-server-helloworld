@@ -1,12 +1,12 @@
 # jersey-server-helloworld
 
-Building the Guide
+Running the Example
 ------------------
 
-To build the project, run maven commad (using embedded jetty server):
+Run the example as follows(using embedded jetty server):
 
     mvn jetty:run
     
     
-
+The resource are available at
 http://localhost:8080/jersey-server-helloworld/api/v1.0/hello
